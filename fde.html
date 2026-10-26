@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="ko" data-theme="dark" data-sync-theme>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141111">
+<meta name="description" content="정규 6개월 960시간과 AI 기술 심화 2개월 349시간. 하이미디어 FDE 엔지니어 양성과정의 커리큘럼, 프로젝트, 멘토링과 모집 안내를 확인하세요.">
+<title>하이미디어 | FDE 엔지니어 양성 과정</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1226'/%3E%3Cpath d='M18 16h8v12h12V16h8v32h-8V36H26v12h-8z' fill='%2328dfad'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+
+/* Layout: 하이미디어 안내자료의 브랜드(차콜 + 로즈 링)를 따르는 세로형 상세페이지. 어두운 히어로 → 밝은 본문 → 어두운 CTA, 8개월 로드맵은 시간 비례 막대로 표시 */
+:root{
+  --bg:#f7f3f1; --surface:#ffffff; --ink:#1f1a1a; --muted:#6b6262; --line:#e7dfdc;
+  --rose:#b5564f; --rose-soft:#f3e3e0; --rose-ink:#9a443e;
+  --night:#141111; --night-2:#211c1c; --night-line:#3a3232; --night-ink:#f4eeec; --night-muted:#b4a9a7; --rose-glow:#e0877f;
+  --ph:#8a6d00; --ph-bg:#fff4c7;
+  --display:"IBM Plex Sans KR","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --s1:.8125rem; --s2:.9375rem; --s3:1.0625rem; --s4:1.375rem; --s5:clamp(1.6rem,3.6vw,2.25rem); --s6:clamp(2.2rem,6.4vw,3.9rem);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171313; --surface:#211b1b; --ink:#f1ebe9; --muted:#aea3a1; --line:#352d2c;
+  --rose:#e0877f; --rose-soft:#3a2523; --rose-ink:#eb9d95;
+  --night:#0e0b0b; --night-2:#1c1717; --night-line:#352d2d;
+  --ph:#f2d36b; --ph-bg:#3a3110; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171313; --surface:#211b1b; --ink:#f1ebe9; --muted:#aea3a1; --line:#352d2c;
+  --rose:#e0877f; --rose-soft:#3a2523; --rose-ink:#eb9d95;
+  --night:#0e0b0b; --night-2:#1c1717; --night-line:#352d2d;
+  --ph:#f2d36b; --ph-bg:#3a3110; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:var(--s2);line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.3;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(56px,9vw,104px)}
+.eyebrow{font-family:var(--mono);font-size:var(--s1);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+.h2{font-size:var(--s5);margin-top:10px}
+.h2 em{font-style:normal;color:var(--rose)}
+.lead{color:var(--muted);font-size:var(--s3);max-width:62ch;margin-top:14px}
+.head{margin-bottom:clamp(28px,5vw,48px)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ph{background:var(--ph-bg);color:var(--ph);border-radius:4px;padding:0 6px;font-weight:500;white-space:nowrap}
+a:focus-visible,summary:focus-visible,.btn:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* HERO */
+.hero{background:var(--night);color:var(--night-ink);position:relative;overflow:hidden;padding-block:clamp(48px,8vw,88px) clamp(40px,6vw,64px)}
+.rings{position:absolute;right:-180px;top:50%;transform:translateY(-50%);width:640px;height:640px;pointer-events:none}
+.rings i{position:absolute;inset:0;border-radius:50%;border:56px solid var(--night-2)}
+.rings i:nth-child(2){inset:70px;border:46px solid var(--rose);opacity:.85}
+.rings i:nth-child(3){inset:160px;border:30px solid var(--night-2)}
+.hero .wrap{position:relative}
+.brand{font-size:var(--s1);color:var(--night-muted);letter-spacing:.04em}
+.chip{display:inline-block;margin-top:28px;border:1px solid var(--rose-glow);color:var(--rose-glow);border-radius:999px;padding:4px 14px;font-size:var(--s1);font-weight:500}
+.hero h1{font-size:var(--s6);margin-top:16px;max-width:15ch}
+.hero h1 span{color:var(--rose-glow)}
+.hero .sub{margin-top:18px;font-size:var(--s3);color:var(--night-muted);max-width:44ch}
+.formula{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:28px;font-family:var(--display)}
+.formula b{background:var(--night-2);border:1px solid var(--night-line);border-radius:10px;padding:10px 16px;font-size:var(--s3);font-weight:600}
+.formula b small{display:block;font-family:var(--mono);font-size:.75rem;color:var(--night-muted);font-weight:500}
+.formula .op{color:var(--rose-glow);font-size:1.4rem;font-weight:700}
+.formula .total{background:var(--rose);border-color:var(--rose);color:#fff}
+.formula .total small{color:#fbe5e2}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:36px}
+.stat{background:color-mix(in srgb,var(--night-2) 88%,transparent);border:1px solid var(--night-line);border-radius:12px;padding:14px 16px;backdrop-filter:blur(4px)}
+.stat b{display:block;font-family:var(--display);font-size:1.35rem}
+.stat span{font-size:var(--s1);color:var(--night-muted)}
+.meta{margin-top:24px;font-size:var(--s1);color:var(--night-muted)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:12px 20px;font-weight:700;font-family:var(--display);text-decoration:none;font-size:var(--s2)}
+.btn.primary{background:var(--rose);color:#fff}
+.btn.ghost{border:1px solid var(--night-line);color:var(--night-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost:hover{border-color:var(--night-muted)}
+
+/* WHY FDE */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.step .k{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--rose);letter-spacing:.12em}
+.step h3{font-size:var(--s4)}
+.step p{color:var(--muted);font-size:var(--s1);line-height:1.65}
+.step .where{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.78rem;color:var(--rose-ink);font-weight:500;line-height:1.6}
+.bar-note{margin-top:14px;background:var(--night);color:var(--night-ink);border-radius:12px;padding:14px 20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;font-size:var(--s2)}
+.bar-note b{color:var(--rose-glow)}
+
+/* PHASES */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.phase{padding:26px 24px;border-right:1px solid var(--line);min-width:0}
+.phase:last-child{border-right:0;background:var(--rose-soft)}
+.phase .when{font-family:var(--mono);font-size:var(--s1);color:var(--muted)}
+.phase h3{font-size:var(--s4);margin-top:6px}
+.phase .q{margin-top:10px;font-weight:500}
+.phase ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:var(--s1)}
+.phase .h{font-family:var(--mono);font-size:1.6rem;font-weight:600;color:var(--rose);margin-top:14px}
+
+/* ROADMAP */
+.road{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.road-scroll{overflow-x:auto}
+.track{display:flex;gap:3px;min-width:720px;height:62px}
+.seg{border-radius:6px;padding:8px 9px;display:flex;flex-direction:column;justify-content:space-between;font-size:.72rem;line-height:1.3;color:var(--ink);background:var(--rose-soft);min-width:0;overflow:hidden}
+.seg b{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg .num{color:var(--muted)}
+.seg.ai{background:color-mix(in srgb,var(--rose) 32%,var(--surface))}
+.seg.adv{background:var(--rose);color:#fff}
+.seg.adv .num{color:#fbe5e2}
+.road-axis{display:flex;min-width:720px;margin-top:10px;font-size:var(--s1);color:var(--muted)}
+.road-axis div{border-top:2px solid var(--line);padding-top:6px}
+.road-axis div.adv{border-color:var(--rose);color:var(--rose-ink);font-weight:500}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;font-size:var(--s1);color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+
+/* CURRICULUM */
+.tag{display:inline-block;font-family:var(--mono);font-size:.75rem;font-weight:600;letter-spacing:.08em;border-radius:6px;padding:3px 10px;background:var(--rose-soft);color:var(--rose-ink)}
+.curr{display:grid;gap:12px}
+.mod{display:grid;grid-template-columns:76px 1fr auto;gap:18px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px}
+.mod .n{font-family:var(--mono);font-size:1.6rem;font-weight:600;color:var(--rose);line-height:1}
+.mod .n small{display:block;font-size:.7rem;color:var(--muted);font-weight:500;margin-top:8px;letter-spacing:.06em}
+.mod h3{font-size:var(--s3)}
+.mod .goal{color:var(--muted);font-size:var(--s1);margin-top:4px}
+.mod ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.mod li{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--ink);background:var(--bg)}
+.mod li.pj{border-color:var(--rose);color:var(--rose-ink);background:transparent;font-weight:500}
+.mod .hrs{font-family:var(--mono);font-weight:600;font-size:var(--s3);white-space:nowrap;text-align:right}
+.mod .hrs small{display:block;font-size:.72rem;color:var(--muted);font-weight:500}
+.mod.ai{border-color:color-mix(in srgb,var(--rose) 45%,var(--line))}
+.sum{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:14px;padding:16px 22px;border-radius:12px;background:var(--night);color:var(--night-ink);font-family:var(--display);font-weight:600}
+.sum .num{color:var(--rose-glow)}
+.bridge{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;border:1px dashed var(--rose);border-radius:14px;padding:20px 22px;color:var(--ink)}
+.bridge .arrow{font-family:var(--mono);font-size:1.6rem;color:var(--rose);font-weight:600}
+.bridge p{font-size:var(--s2)}
+.bridge p span{color:var(--muted);display:block;font-size:var(--s1)}
+
+/* ADVANCED */
+.adv-intro{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.fact{border-top:2px solid var(--rose);padding-top:12px;min-width:0}
+.fact b{display:block;font-family:var(--display);font-size:var(--s4)}
+.fact span{color:var(--muted);font-size:var(--s1)}
+.weeks{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:28px}
+.wk{border-radius:8px;padding:10px 8px;font-size:.75rem;line-height:1.45;background:var(--rose-soft);min-width:0}
+.wk b{display:block;font-family:var(--mono);font-size:.72rem;color:var(--rose-ink)}
+.wk.pj{background:var(--rose);color:#fff}
+.wk.pj b{color:#fbe5e2}
+.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:var(--s1)}
+th,td{text-align:left;vertical-align:top;padding:16px 18px;border-bottom:1px solid var(--line)}
+th{font-family:var(--display);font-weight:600;color:var(--muted);font-size:.78rem;letter-spacing:.04em;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td.d{white-space:nowrap;font-family:var(--mono);font-weight:600}
+td.d span{display:block;font-family:var(--display);font-size:var(--s2);color:var(--ink);margin-top:2px}
+td .st{display:inline-block;font-size:.72rem;color:var(--rose-ink);background:var(--rose-soft);border-radius:4px;padding:1px 7px;margin-top:6px;font-family:var(--body);font-weight:500}
+td.hw{color:var(--muted)}
+td.hw b{display:block;font-family:var(--mono);color:var(--ink);font-weight:600;margin-bottom:2px}
+.footnote{margin-top:12px;font-size:var(--s1);color:var(--muted)}
+.cycle{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.cy{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.cy .when{font-family:var(--mono);font-size:.75rem;color:var(--rose);font-weight:600}
+.cy h4{font-size:var(--s3);margin-top:6px}
+.cy p{color:var(--muted);font-size:var(--s1);margin-top:6px}
+
+/* PROJECT */
+.dark{background:var(--night);color:var(--night-ink)}
+.dark .lead{color:var(--night-muted)}
+.dark .eyebrow{color:var(--rose-glow)}
+.dark .h2 em{color:var(--rose-glow)}
+.pweeks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pw{background:var(--night-2);border:1px solid var(--night-line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.pw .k{font-family:var(--mono);font-size:.75rem;color:var(--rose-glow);font-weight:600}
+.pw h3{font-size:var(--s4)}
+.pw p{font-size:var(--s1);color:var(--night-muted)}
+.pw ul{list-style:none;margin:auto 0 0;padding:12px 0 0;border-top:1px solid var(--night-line);font-family:var(--mono);font-size:.75rem;display:grid;gap:4px}
+.pw li.hl{color:var(--rose-glow);font-weight:600}
+.mentor{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;margin-top:48px;align-items:start}
+.logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.logos span{border:1px solid var(--night-line);border-radius:8px;padding:8px 14px;font-family:var(--display);font-weight:600;font-size:var(--s2)}
+.mentor .small{font-size:var(--s1);color:var(--night-muted);margin-top:10px}
+.mflow{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.mflow li{display:grid;grid-template-columns:28px 1fr;gap:12px;background:var(--night-2);border:1px solid var(--night-line);border-radius:12px;padding:14px 16px}
+.mflow li b{font-family:var(--mono);color:var(--rose-glow)}
+.mflow li p{font-size:var(--s1);color:var(--night-muted)}
+.mflow li p strong{display:block;color:var(--night-ink);font-size:var(--s2)}
+
+/* DELIVERABLES */
+.deliv{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.dv{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.dv .k{font-family:var(--mono);color:var(--rose);font-weight:600}
+.dv h3{font-size:var(--s3)}
+.dv p{color:var(--muted);font-size:var(--s1)}
+.dv .so{margin-top:auto;padding-top:12px;font-weight:700;font-size:var(--s1);color:var(--rose-ink)}
+
+/* ALUMNI */
+.alumni{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.al{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--surface);min-width:0}
+.al .k{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.al h3{font-size:var(--s3);margin-top:4px}
+.al .t{font-weight:500;font-size:var(--s1);color:var(--rose-ink);margin-top:2px}
+.al p{color:var(--muted);font-size:.8rem;margin-top:8px;line-height:1.6}
+.src{margin-top:14px;font-size:.75rem;color:var(--muted)}
+
+/* RESULTS */
+.big{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.bg{padding:22px 0;border-top:2px solid var(--ink);min-width:0}
+.bg b{font-family:var(--display);font-size:clamp(2rem,4.6vw,2.8rem);font-weight:700;color:var(--rose);display:block;line-height:1.1}
+.bg span{color:var(--muted);font-size:var(--s1)}
+.cases{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.case b{font-family:var(--display);font-size:var(--s4);display:block}
+.case .t{color:var(--rose-ink);font-weight:500;font-size:var(--s1)}
+.case p{color:var(--muted);font-size:var(--s1);margin-top:8px}
+.support{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:28px}
+.sp{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:left;min-width:0}
+.sp b{display:block;font-family:var(--display);font-size:var(--s2)}
+.sp span{font-size:.78rem;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.qt{margin:0;border-left:3px solid var(--rose);padding:4px 0 4px 16px}
+.qt p{font-size:var(--s2)}
+.qt cite{display:block;margin-top:8px;font-style:normal;font-size:.78rem;color:var(--muted)}
+
+/* PHOTOS */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery figure,.iv figure{margin:0;position:relative;border-radius:12px;overflow:hidden;background:var(--line);min-width:0}
+.gallery img,.iv img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery figcaption,.iv figcaption{position:absolute;left:0;right:0;bottom:0;padding:24px 12px 10px;background:linear-gradient(transparent,rgba(12,9,9,.82));color:#fff;font-size:.78rem;font-weight:500;line-height:1.4}
+.gallery figcaption b,.iv figcaption b{display:block;font-family:var(--display);font-size:var(--s2)}
+.iv{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:10px;margin-bottom:28px}
+.iv figure.main{grid-row:span 2}
+.iv figure.main img{aspect-ratio:auto;min-height:100%}
+.iv .badge{position:absolute;top:12px;left:12px;background:var(--rose);color:#fff;font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.1em;border-radius:6px;padding:3px 9px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:28px;font-family:var(--display);font-weight:600}
+.flow span{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 16px}
+.flow span small{display:block;font-family:var(--body);font-weight:400;font-size:.78rem;color:var(--muted)}
+.flow span.hl{background:var(--rose);border-color:var(--rose);color:#fff}
+.flow span.hl small{color:#fbe5e2}
+.flow i{font-style:normal;color:var(--rose);font-family:var(--mono)}
+
+/* APPLY */
+.apply{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+dl.info{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+dl.info div{display:grid;grid-template-columns:120px 1fr 1fr;border-bottom:1px solid var(--line)}
+dl.info div:last-child{border-bottom:0}
+dl.info dt,dl.info dd{margin:0;padding:14px 16px;font-size:var(--s1);min-width:0}
+dl.info dt{font-weight:700;background:var(--bg);font-family:var(--display)}
+dl.info .hd dt,dl.info .hd dd{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;color:var(--muted);font-weight:600;background:var(--bg)}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-family:var(--display);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--rose);font-family:var(--mono);font-weight:600}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);font-size:var(--s1);margin-top:8px}
+
+.cta{background:var(--night);color:var(--night-ink);text-align:left;position:relative;overflow:hidden}
+.cta h2{font-size:var(--s6);max-width:12ch}
+.cta h2 span{color:var(--rose-glow)}
+.cta .lead{color:var(--night-muted)}
+.cta .perks{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cta .perks span{border:1px solid var(--night-line);border-radius:999px;padding:6px 14px;font-size:var(--s1)}
+.contact{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:var(--display)}
+.foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--night-line);font-size:.78rem;color:var(--night-muted)}
+
+@media (max-width:900px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps .step:last-child{grid-column:1/-1}
+  .phases{grid-template-columns:1fr}
+  .phase{border-right:0;border-bottom:1px solid var(--line)}
+  .adv-intro,.deliv,.alumni,.big{grid-template-columns:repeat(2,1fr)}
+  .weeks{grid-template-columns:repeat(4,1fr)}
+  .pweeks{grid-template-columns:repeat(2,1fr)}
+  .mentor,.apply{grid-template-columns:1fr}
+  .cycle,.quotes{grid-template-columns:1fr}
+  .cases,.gallery{grid-template-columns:repeat(2,1fr)}
+  .iv{grid-template-columns:1fr 1fr}
+  .iv figure.main{grid-column:1/-1;grid-row:auto}
+  .iv figure.main img{aspect-ratio:4/3}
+  .support{grid-template-columns:repeat(3,1fr)}
+  .rings{opacity:.35}
+}
+@media (max-width:560px){
+  .steps,.pweeks,.deliv,.alumni,.cases{grid-template-columns:1fr}
+  .support{grid-template-columns:repeat(2,1fr)}
+  .mod{grid-template-columns:1fr;gap:8px}
+  .mod .n{display:flex;align-items:baseline;gap:10px}
+  .mod .n small{margin-top:0}
+  .mod .hrs{text-align:left}
+  dl.info div{grid-template-columns:1fr 1fr}
+  dl.info dt{grid-column:1/-1}
+  .rings{width:420px;height:420px;right:-220px;top:120px;transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .rings i:nth-child(2){animation:spin 40s linear infinite;border-right-color:transparent}
+  @keyframes spin{to{transform:rotate(360deg)}}
+}
+
+.footer{position:relative;padding:0 clamp(24px,4.6vw,80px);border-top:1px solid var(--line);transition:border-color .3s}.progress{position:absolute;left:0;right:0;top:-1px;height:2px;pointer-events:none;background:transparent}.progress span{display:block;height:100%;width:10%;background:var(--mint);transition:width .45s var(--ease)}.footer-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}.page-meta{display:flex;align-items:center;gap:17px;min-width:170px}.page-count{font-size:13px;letter-spacing:1.5px;font-weight:800}.page-count span{color:#5c6b88;font-size:10px;font-weight:500}.page-title{color:#9aa9c6;font-size:10px}.pagination{display:flex;align-items:center;gap:10px}.dot{border:0;padding:10px 0;background:transparent;position:relative;width:9px;height:26px}.dot:after{content:"";display:block;width:5px;height:5px;border-radius:5px;background:#45526e;transition:width .3s,background .3s}.dot.active{width:25px}.dot.active:after{width:25px;background:var(--mint)}.footer-hint{display:flex;align-items:center;gap:10px;margin:0;font-size:9px;color:#6e7e9d}.footer-hint svg{width:16px;height:16px;color:#92a4c4}.footer-center{display:flex;align-items:center;gap:27px}.controls{display:flex;align-items:center;gap:8px}.control{display:grid;place-items:center;background:none;border:1px solid #30405e;border-radius:50%;width:39px;height:39px;transition:background .2s,border-color .2s,opacity .2s}.control:hover:not(:disabled){border-color:var(--mint);color:var(--mint)}.control:disabled{opacity:.24}.control.next{border-color:var(--mint);background:var(--mint);color:var(--navy)}.control.next:hover:not(:disabled){background:#69eec9;color:var(--navy)}.control.next:disabled{background:transparent;border-color:#30405e;color:inherit}.control svg{width:16px;height:16px}
+</style>
+<link rel="stylesheet" href="assets/course-switcher.css">
+<link rel="stylesheet" href="assets/fde-slides.css">
+<script src="assets/slide-navigation.js" defer></script>
+</head>
+<body class="fde-page" data-theme="dark">
+<a class="skip-link" href="#slides">본문으로 이동</a>
+<div class="app">
+<header class="site-header"><a class="site-brand" href="#intro" aria-label="하이미디어 FDE 과정 처음으로"><img src="assets/himedia-logo.jpg" alt="하이미디어아카데미" width="252" height="43" decoding="async"></a><label class="chapter-control"><span>과정 안내 목차</span><select id="chapter-select" aria-label="FDE 구간 선택"><option value="0">01 · FDE 엔지니어 과정</option><option value="1">02 · FDE의 다섯 단계</option><option value="2">03 · 6개월 + 2개월 구성</option><option value="3">04 · 8개월 로드맵</option><option value="4">05 · 정규 과정 · 960h</option><option value="5">06 · 심화 과정 · 349h</option><option value="6">07 · 팀 프로젝트와 멘토링</option><option value="7">08 · FDE 포트폴리오</option><option value="8">09 · 수료생 프로젝트</option><option value="9">10 · 프로젝트 발표 현장</option><option value="10">11 · 현장 면접과 취업 지원</option><option value="11">12 · 모집 안내와 FAQ</option><option value="12">13 · FDE 상담 안내</option></select></label><button class="site-cta" type="button" data-go="11">모집·상담 안내 <span aria-hidden="true">↗</span></button></header>
+<nav class="course-switcher" aria-label="교육 과정 선택"><span class="course-caption">OUR PROGRAMS</span><a href="index.html#intro">AI 개발자 과정</a><a href="fde.html#intro" aria-current="page">FDE 엔지니어 과정</a></nav>
+<main class="slider" id="slides" tabindex="0" aria-label="FDE 엔지니어 과정 안내. 가로로 넘겨 구간을 이동하고, 긴 내용은 각 화면 안에서 세로로 읽으세요.">
+<section class="slide hero dark" id="intro" data-title="FDE 엔지니어 과정" data-theme="dark" role="group" aria-roledescription="슬라이드" aria-label="1 / 13: FDE 엔지니어 과정" data-active="true">
+  <div class="ring-clip"><div class="rings" aria-hidden="true"><i></i><i></i><i></i></div></div>
+  <div class="wrap">
+
+    <span class="chip">정규 6개월 + AI 기술 심화 2개월</span>
+    <h1><span>FDE 엔지니어</span> 양성 과정</h1>
+    <p class="sub">자바 한 줄부터 시작해, 현장의 문제를 정의하고 AI 서비스를 배포·운영까지 해내는 엔지니어로 성장하는 8개월 로드맵입니다.</p>
+
+    <div class="formula" aria-label="정규 960시간과 심화 349시간을 합쳐 총 1,309시간">
+      <b>정규 과정<small>6개월 · 960h</small></b>
+      <span class="op">+</span>
+      <b>AI 기술 심화<small>8주 · 349h</small></b>
+      <span class="op">=</span>
+      <b class="total">FDE 트랙<small>8개월 · 1,309h</small></b>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b class="num">1,309시간</b><span>정규 960h + 심화 349h</span></div>
+      <div class="stat"><b>프로젝트 6종+</b><span>웹 2 · AI 3 · 심화 팀 1</span></div>
+      <div class="stat"><b>8~12개사</b><span>발표회 현장 면접</span></div>
+      <div class="stat"><b>100%</b><span>심화 3·5기 취업률</span></div>
+      <div class="stat"><b>Claude Max</b><span>심화 과정 중 지원</span></div>
+    </div>
+
+    <div class="btns">
+      <a class="btn primary" href="#apply">모집·상담 정보 보기 →</a>
+      <a class="btn ghost" href="#roadmap">8개월 로드맵 보기</a>
+    </div>
+    <p class="meta">하이미디어 강남 · 1993년 설립 · 전국 14개 캠퍼스 · 고용노동부 우수훈련기관 5년 인증</p>
+  </div>
+</section>
+<section class="slide " id="why" data-title="FDE의 다섯 단계" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="2 / 13: FDE의 다섯 단계" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Why FDE</div>
+      <h2 class="h2">AI를 아는 개발자에서,<br><em>AI를 현장에 배포하는 엔지니어</em>로</h2>
+      <p class="lead">FDE(Forward Deployed Engineer)는 고객의 현장에서 문제를 직접 정의하고, 맞는 AI 기술을 골라 서비스로 만들고, 배포·운영까지 책임지는 엔지니어입니다. 이 과정은 FDE의 다섯 단계를 8개월 동안 모두 직접 해보도록 설계했습니다.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="k">STEP 1</span><h3>문제 정의</h3><p>고객의 업무 흐름에서 해결할 문제와 성공 기준을 정합니다.</p><div class="where">정규 · 관리형/주문형 서비스 기획<br>심화 · 기업 과제 브레인스토밍</div></div>
+      <div class="step"><span class="k">STEP 2</span><h3>기술 선택·비교</h3><p>모델, 프롬프트, 검색 전략을 같은 조건에서 비교해 고릅니다.</p><div class="where">정규 · 머신러닝·딥러닝·LLM<br>심화 · 특강 1 LLM · 특강 2 RAG</div></div>
+      <div class="step"><span class="k">STEP 3</span><h3>구현</h3><p>웹 서비스와 업무 도구를 호출하는 Agent를 직접 만듭니다.</p><div class="where">정규 · Spring Boot 3 · React<br>심화 · 특강 3 Agent·MCP</div></div>
+      <div class="step"><span class="k">STEP 4</span><h3>평가·개선</h3><p>평가셋으로 품질·응답시간·비용을 재고 개선 전후를 비교합니다.</p><div class="where">정규 · AI 서비스 프로젝트<br>심화 · 특강 4 평가·성능·비용</div></div>
+      <div class="step"><span class="k">STEP 5</span><h3>배포·운영</h3><p>배포하고 권한·로그·장애 복구까지 운영 절차를 갖춥니다.</p><div class="where">정규 · Linux · Docker · AWS CI/CD<br>심화 · 특강 5 배포·운영</div></div>
+    </div>
+    <div class="bar-note"><span>정규 6개월에 <b>만들고 배포하는 힘</b>을, 심화 2개월에 <b>현장에 맞춰 고르고 평가하는 힘</b>을 기릅니다.</span><span>결과물이 곧 FDE 포트폴리오</span></div>
+  </div>
+</section>
+<section class="slide " id="structure" data-title="6개월 + 2개월 구성" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="3 / 13: 6개월 + 2개월 구성" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Course Structure</div>
+      <h2 class="h2">왜 <em>6개월 + 2개월</em>인가요?</h2>
+      <p class="lead">현장에 배포하려면 탄탄한 엔지니어링 기반이 먼저입니다. 정규 과정에서 풀스택과 AI 기초를 갖추고, 심화 과정에서 현업 멘토와 실제 서비스를 완성합니다.</p>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <div class="when">PHASE 1 · 1–4개월</div>
+        <h3>엔지니어링 기반</h3>
+        <p class="q">서비스를 끝까지 만들고 배포할 수 있는가?</p>
+        <ul><li>Java · OOP · MySQL</li><li>Spring Boot 3 백엔드 · React</li><li>Linux · Docker · AWS CI/CD</li><li>웹 서비스 프로젝트 2종</li></ul>
+        <div class="h num">600h</div>
+      </div>
+      <div class="phase">
+        <div class="when">PHASE 2 · 5–6개월</div>
+        <h3>AI 엔지니어링</h3>
+        <p class="q">AI 모델을 서비스 안에 녹여낼 수 있는가?</p>
+        <ul><li>Python · 데이터 분석</li><li>머신러닝·딥러닝 · TensorFlow</li><li>컴퓨터 비전 · NLP · LLM · 추론 서버</li><li>AI 융합 프로젝트 3종 · 기업/취업 특강</li></ul>
+        <div class="h num">360h</div>
+      </div>
+      <div class="phase">
+        <div class="when">PHASE 3 · 7–8개월</div>
+        <h3>FDE 심화 (조별 멘토)</h3>
+        <p class="q">현장의 문제에 맞는 AI를 고르고, 평가하고, 운영할 수 있는가?</p>
+        <ul><li>토요 특강 5회 · LLM · RAG · Agent·MCP</li><li>평가·성능·비용 · 배포·운영</li><li>빅테크 멘토와 4주 팀 프로젝트</li><li>발표회 현장 면접 8~12개사</li></ul>
+        <div class="h num">349h</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide " id="roadmap" data-title="8개월 로드맵" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="4 / 13: 8개월 로드맵" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">8-Month Roadmap</div>
+      <h2 class="h2">1,309시간, <em>한눈에 보는 로드맵</em></h2>
+      <p class="lead">막대 길이는 실제 훈련시간에 비례합니다.</p>
+    </div>
+    <div class="road">
+      <div class="road-scroll">
+        <div class="track">
+          <div class="seg" style="flex:168"><b>자바 기초</b><span class="num">168h</span></div>
+          <div class="seg" style="flex:144"><b>Spring 백엔드</b><span class="num">144h</span></div>
+          <div class="seg" style="flex:136"><b>클라우드 풀스택</b><span class="num">136h</span></div>
+          <div class="seg" style="flex:152"><b>웹 프로젝트</b><span class="num">152h</span></div>
+          <div class="seg ai" style="flex:184"><b>생성형 AI</b><span class="num">184h</span></div>
+          <div class="seg ai" style="flex:176"><b>AI 융합 · 특강</b><span class="num">176h</span></div>
+          <div class="seg adv" style="flex:200"><b>심화 강의·실습</b><span class="num">200h</span></div>
+          <div class="seg adv" style="flex:149"><b>팀 프로젝트</b><span class="num">149h</span></div>
+        </div>
+        <div class="road-axis">
+          <div style="flex:600">정규 · 엔지니어링 기반 600h</div>
+          <div style="flex:360">정규 · AI 엔지니어링 360h</div>
+          <div class="adv" style="flex:349">심화 · FDE 349h</div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--rose-soft)"></i>웹·클라우드</span>
+        <span><i style="background:color-mix(in srgb,var(--rose) 32%,var(--surface))"></i>AI</span>
+        <span><i style="background:var(--rose)"></i>FDE 심화</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide " id="regular" data-title="정규 과정 · 960h" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="5 / 13: 정규 과정 · 960h" inert>
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">PHASE 1–2 · 정규 6개월</span>
+      <h2 class="h2" style="margin-top:14px">정규 과정 커리큘럼 <em class="num">960h</em></h2>
+      <p class="lead">프로그래밍 기초부터 클라우드 배포, 생성형 AI까지. 각 단계는 프로젝트로 마무리합니다.</p>
+    </div>
+    <div class="curr">
+      <article class="mod">
+        <div class="n">01<small>기초</small></div>
+        <div><h3>자바 웹 애플리케이션 개발을 위한 프로그래밍 기초</h3><p class="goal">개발자의 사고방식과 데이터를 다루는 법을 익힙니다.</p>
+          <ul><li>SW 개발 이해 · CS 기초</li><li>자바 기본 문법</li><li>객체지향 프로그래밍(OOP)</li><li>SQL (MySQL)</li><li>데이터베이스 모델링</li><li>DB 연동 Java 프로그래밍</li></ul></div>
+        <div class="hrs num">168h</div>
+      </article>
+      <article class="mod">
+        <div class="n">02<small>백엔드</small></div>
+        <div><h3>Spring Boot 3를 활용한 백엔드 개발</h3><p class="goal">웹의 기본기와 실무 표준 백엔드 프레임워크를 다룹니다.</p>
+          <ul><li>HTML5 · CSS</li><li>JavaScript 기초</li><li>Spring Boot 3 기본</li><li>Spring Boot 3 고급</li></ul></div>
+        <div class="hrs num">144h</div>
+      </article>
+      <article class="mod">
+        <div class="n">03<small>풀스택·클라우드</small></div>
+        <div><h3>클라우드 기술을 활용한 풀스택 개발</h3><p class="goal">프론트엔드를 완성하고, 직접 만든 서비스를 클라우드에 올립니다.</p>
+          <ul><li>React 기본 (SPA)</li><li>React 활용 Todo 앱</li><li>Linux (Ubuntu 20.04)</li><li>Docker</li><li>AWS</li><li>CI/CD</li></ul></div>
+        <div class="hrs num">136h</div>
+      </article>
+      <article class="mod">
+        <div class="n">04<small>웹 실전</small></div>
+        <div><h3>Spring Boot 3 활용 웹 개발</h3><p class="goal">실제 업무 유형의 웹 애플리케이션을 처음부터 구현합니다.</p>
+          <ul><li class="pj">관리형 웹 애플리케이션</li><li class="pj">주문형 웹 애플리케이션</li></ul></div>
+        <div class="hrs num">56h</div>
+      </article>
+      <article class="mod">
+        <div class="n">05<small>웹 프로젝트</small></div>
+        <div><h3>React, Spring Boot 3 기반 웹서비스 개발</h3><p class="goal">기획부터 개발, CI/CD 파이프라인 구축까지 서비스 한 사이클을 경험합니다.</p>
+          <ul><li class="pj">관리형 서비스 기획·개발·CI/CD</li><li class="pj">주문형 서비스 기획·개발·CI/CD</li></ul></div>
+        <div class="hrs num">96h</div>
+      </article>
+      <article class="mod ai">
+        <div class="n">06<small>생성형 AI</small></div>
+        <div><h3>생성형 AI를 활용한 웹 서비스 개발</h3><p class="goal">Python부터 LLM, 추론 서버까지 AI 엔지니어링의 기반을 쌓습니다.</p>
+          <ul><li>Python 기초 문법</li><li>데이터 분석 라이브러리</li><li>머신러닝·딥러닝 개요</li><li>TensorFlow</li><li>딥러닝 알고리즘</li><li>컴퓨터 비전</li><li>자연어 처리</li><li>LLM · 생성형 AI 모델 활용</li><li>딥러닝 추론 서버 · 추론기 개발</li></ul></div>
+        <div class="hrs num">184h</div>
+      </article>
+      <article class="mod ai">
+        <div class="n">07<small>AI 융합</small></div>
+        <div><h3>딥러닝 모델 API를 활용한 AI 융합 웹 서비스 구현</h3><p class="goal">AI 모델을 웹 서비스에 통합하는 프로젝트 3종을 완성합니다.</p>
+          <ul><li class="pj">컴퓨터 비전 객체 자동 식별 시스템</li><li class="pj">LLM 기반 AI 서비스</li><li class="pj">멀티모달(영상·텍스트·음성) 데이터 식별·검색 시스템</li></ul></div>
+        <div class="hrs num">136h</div>
+      </article>
+      <article class="mod">
+        <div class="n">08<small>커리어</small></div>
+        <div><h3>기업특강 · 취업특강</h3><p class="goal">현업이 원하는 역량을 듣고, 취업을 준비합니다.</p>
+          <ul><li>기업특강 24h</li><li>취업특강 16h</li></ul></div>
+        <div class="hrs num">40h</div>
+      </article>
+    </div>
+    <div class="sum"><span>정규 과정 총 훈련시간</span><span class="num">960시간</span></div>
+
+    <div class="bridge">
+      <div class="arrow">→</div>
+      <p><strong>정규 과정을 마치면 심화 과정의 수강 대상 조건을 그대로 갖추게 됩니다.</strong>
+      <span>심화 과정 대상: IT 교육 이수자 중 AI 기초 지식이 있는 수강생. 별도 선수학습 없이 개강일부터 참여합니다.</span></p>
+    </div>
+  </div>
+</section>
+<section class="slide " id="advanced" data-title="심화 과정 · 349h" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="6 / 13: 심화 과정 · 349h" inert>
+  <div class="wrap">
+    <div class="head">
+      <span class="tag">PHASE 3 · AI 기술 심화 2개월</span>
+      <h2 class="h2" style="margin-top:14px">4주 배우고, 4주 만드는 <em class="num">349h</em></h2>
+      <p class="lead">모델과 기술을 직접 비교하고, 서비스를 구현해 평가·개선·운영하는 경험을 쌓습니다. 토요일엔 현직 강사 특강, 평일엔 상주 코치와 실습합니다.</p>
+    </div>
+    <div class="adv-intro">
+      <div class="fact"><b class="num">25일 · 200h</b><span>강의·실습 1–4주차 (화–토 수업)</span></div>
+      <div class="fact"><b class="num">19일 · 149h</b><span>팀 프로젝트 5–8주차 (월–금 수업)</span></div>
+      <div class="fact"><b>피드백 12회</b><span>목요일 공통 피드백 5회 + 조별 멘토링 7회</span></div>
+      <div class="fact"><b>09:00–18:00</b><span>하루 8시간 · 피드백일은 19–21시 온라인 추가</span></div>
+    </div>
+    <div class="weeks" aria-label="8주 일정">
+      <div class="wk"><b>1주</b>특강 1<br>LLM·AI 개발</div>
+      <div class="wk"><b>2주</b>특강 2<br>RAG 고도화</div>
+      <div class="wk"><b>3주</b>특강 3<br>Agent·MCP</div>
+      <div class="wk"><b>4주</b>특강 4·5<br>평가 · 배포</div>
+      <div class="wk pj"><b>5주</b>설계 · MVP</div>
+      <div class="wk pj"><b>6주</b>개선 · 중간발표</div>
+      <div class="wk pj"><b>7주</b>품질 · 운영</div>
+      <div class="wk pj"><b>8주</b>최종발표 · 면접</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>토요 특강 (8시간)</th><th>학습 내용</th><th>이어지는 평일 과제</th></tr></thead>
+        <tbody>
+          <tr><td class="d">특강 1<span>LLM·AI 개발</span><span class="st">기술 선택</span></td><td>모델 API와 구조화 출력·도구 호출 (2h)<br>AI 코딩과 작업 맥락 관리 (3h)<br>모델·프롬프트·평가 결과 비교 (3h)</td><td class="hw"><b>특강 1 다음 주 평일</b>개인 AI 도구를 만들고 모델별 품질·응답시간·비용을 비교한다.</td></tr>
+          <tr><td class="d">특강 2<span>RAG 고도화</span><span class="st">검색 설계</span></td><td>문서 파싱·메타데이터·청킹 (2h)<br>임베딩·하이브리드 검색·리랭킹 (3h)<br>출처 인용과 검색·답변 평가 (3h)</td><td class="hw"><b>특강 2 다음 주 평일</b>같은 질문으로 검색 전략을 비교하고 검색 누락과 답변 오류를 개선한다.</td></tr>
+          <tr><td class="d">특강 3<span>Agent·MCP</span><span class="st">구현</span></td><td>업무 흐름과 도구 설계 (2h)<br>API·MCP 연결과 상태·메모리 (3h)<br>재시도·중복 실행·사람 승인과 과업 평가 (3h)</td><td class="hw"><b>특강 3 다음 주 평일</b>업무 도구를 호출하는 Agent를 구현하고 실패 복구를 시험한다.</td></tr>
+          <tr><td class="d">특강 4<span>평가·성능·비용</span><span class="st">평가·개선</span></td><td>평가셋·회귀 시험·실패 분석 (2h)<br>모델·프롬프트·검색 품질 개선 (3h)<br>지연·비용·캐시·모델 라우팅 비교 (3h)</td><td class="hw"><b>특강 4 다음 주 평일</b>같은 입력으로 개선 전후를 비교하고 기술 선택의 이유를 설명한다.</td></tr>
+          <tr><td class="d">특강 5<span>배포·운영</span><span class="st">배포·운영</span></td><td>환경·컨테이너·배포 (2h)<br>외부 시스템 연동·로그·권한 관리 (3h)<br>장애 재현·진단·복구와 운영 절차 (3h)</td><td class="hw"><b>특강 5 다음 주 평일</b>서비스를 배포하고 권한·장애 복구를 점검한다. 프로젝트 준비를 마친다.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="footnote">멀티모달 · 로컬 모델 · 파인튜닝 · Graph RAG · 멀티에이전트는 과제와 연결되는 사례나 심화 실습으로 다룹니다. 휴강일은 기수별 일정표로 안내합니다.</p>
+
+    <div class="cycle">
+      <div class="cy"><span class="when">토요일 · 8시간</span><h4>현직 강사 특강</h4><p>현직 강사가 개념과 구현 사례를 설명하고 실습을 지도합니다.</p></div>
+      <div class="cy"><span class="when">화 – 금 · 평일 실습</span><h4>예제 재실행과 비교</h4><p>데이터와 조건을 바꿔 결과를 비교합니다. 여러 명이 같은 지점에서 막히면 상주 코치가 30–60분 소강의로 짚어줍니다.</p></div>
+      <div class="cy"><span class="when">목요일 19–21시 · 온라인</span><h4>공통 피드백</h4><p>그 주 특강 강사가 사전 질문과 대표 실패 사례를 함께 살펴보고, 답변은 다음 수업에서 확인받습니다.</p></div>
+    </div>
+  </div>
+</section>
+<section class="slide dark" id="project" data-title="팀 프로젝트와 멘토링" data-theme="dark" role="group" aria-roledescription="슬라이드" aria-label="7 / 13: 팀 프로젝트와 멘토링" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Team Project · 5–8주차</div>
+      <h2 class="h2">4주 동안 <em>현장에 배포할 AI 서비스</em>를 만듭니다</h2>
+      <p class="lead">기업 과제 또는 교육진이 준비한 문제와 자료로 시작합니다. 문제에 맞는 기술을 고르고, 구현한 뒤 평가와 사용 시험을 거쳐 개선합니다.</p>
+    </div>
+    <div class="pweeks">
+      <div class="pw"><span class="k">프로젝트 1주차 · 5주차</span><h3>설계 · MVP</h3><p>문제와 성공 기준을 확인하고 구조와 역할을 정한 뒤, 핵심 흐름으로 MVP를 만듭니다.</p><ul><li>월 · 설계·기준선</li><li>목 · MVP 검토</li></ul></div>
+      <div class="pw"><span class="k">프로젝트 2주차 · 6주차</span><h3>개선 · 중간발표</h3><p>MVP를 개선하고 사용 시나리오를 시험합니다. 구현 기능과 평가 결과를 공유합니다.</p><ul><li>월 · 진행 점검</li><li class="hl">목 · 중간발표</li></ul></div>
+      <div class="pw"><span class="k">프로젝트 3주차 · 7주차</span><h3>품질 · 운영</h3><p>품질·성능·비용을 개선하고 권한·로그·실패 복구를 확인합니다. 배포·운영 문서를 정리합니다.</p><ul><li>월 · 품질·운영 검토</li><li>목 · 출시 후보 검토</li></ul></div>
+      <div class="pw"><span class="k">프로젝트 4주차 · 8주차</span><h3>마무리 · 최종발표</h3><p>남은 문제를 수정하고 전체 시연과 평가를 마칩니다. 운영 자료와 개인 포트폴리오를 정리합니다.</p><ul><li>월 · 최종 기술 검토</li><li>목 · 리허설</li><li class="hl">금 · 최종발표 · 현장 면접</li></ul></div>
+    </div>
+
+    <div class="mentor">
+      <div>
+        <div class="eyebrow">Mentoring</div>
+        <h3 style="font-size:var(--s5);margin-top:10px">현업 빅테크 개발자가<br>우리 조의 멘토입니다</h3>
+        <div class="logos"><span>카카오뱅크</span><span>쿠팡</span><span>이베이 · 지마켓</span><span>원티드</span><span>조이시티</span><span>넥스트증권</span></div>
+        <p class="small">멘토 소속 기업 · 전·현직 10년 이상 실무자 · 기수별 상이</p>
+      </div>
+      <ol class="mflow">
+        <li><b>1</b><p><strong>조별 담당 멘토 고정</strong>프로젝트 4주 동안 같은 멘토가 우리 조를 끝까지 봅니다.</p></li>
+        <li><b>2</b><p><strong>팀이 먼저 공유</strong>멘토링 전에 실행 결과, 시도한 방법과 질문을 정리해 공유합니다.</p></li>
+        <li><b>3</b><p><strong>멘토가 검토하고 우선순위 결정</strong>구현과 평가 결과를 검토하고 다음 작업의 우선순위를 함께 정합니다.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="slide " id="portfolio" data-title="FDE 포트폴리오" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="8 / 13: FDE 포트폴리오" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Final Deliverables</div>
+      <h2 class="h2">수료할 때 손에 쥐는 <em>FDE 포트폴리오</em></h2>
+      <p class="lead">정규 과정의 웹·AI 프로젝트 위에, 기업이 묻는 “무엇을, 왜, 어떻게 했나”에 답할 수 있는 근거가 쌓입니다.</p>
+    </div>
+    <div class="deliv">
+      <div class="dv"><span class="k">01</span><h3>팀 서비스·저장소</h3><p>핵심 기능이 동작하는 배포본과 코드, 설치·실행 방법</p><span class="so">실제로 돌아가는 서비스</span></div>
+      <div class="dv"><span class="k">02</span><h3>평가·개선 기록</h3><p>평가셋과 결과, 품질·응답시간·비용 비교, 사용 시험과 수정 내역</p><span class="so">기술 선택의 근거</span></div>
+      <div class="dv"><span class="k">03</span><h3>운영 문서</h3><p>시스템 구조, 권한과 환경 설정, 로그 확인과 장애 대응 방법</p><span class="so">현장 배포·운영 역량</span></div>
+      <div class="dv"><span class="k">04</span><h3>개인 포트폴리오</h3><p>본인이 구현·수정·검증한 내용, 선택한 방법과 그 이유</p><span class="so">면접에서 설명할 내 기여</span></div>
+    </div>
+  </div>
+</section>
+<section class="slide " id="alumni" data-title="수료생 프로젝트" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="9 / 13: 수료생 프로젝트" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Alumni Projects</div>
+      <h2 class="h2">먼저 수료한 팀들이 <em>실제로 배포한 AI 서비스</em></h2>
+    </div>
+    <div class="alumni">
+      <div class="al"><span class="k">12기 · 5인</span><h3>AEGIS</h3><div class="t">생성형 AI 에이전트 관제 솔루션</div><p>상황을 인식하고 능동 대응·실시간 리포팅까지 수행하는 지능형 CCTV</p></div>
+      <div class="al"><span class="k">12기 · 6인</span><h3>BRICKERS</h3><div class="t">3D 브릭 도안 가설 실험 엔진</div><p>레고 브릭에 AI를 더해 교육·인지 재활까지 세대별 솔루션 제공</p></div>
+      <div class="al"><span class="k">12기 · 6인</span><h3>차봄</h3><div class="t">AI 기반 차량 예지 정비 시스템</div><p>소모품 교체 시점을 데이터로 안내해 고장과 과잉 정비를 줄입니다</p></div>
+      <div class="al"><span class="k">12기 · 4인</span><h3>Easy Quality</h3><div class="t">SOP 문서 검색·추적 AI 에이전트</div><p>규제 산업의 감사 대응 문서 관리를 자동화합니다</p></div>
+      <div class="al"><span class="k">13기 · 3인</span><h3>BOSS</h3><div class="t">창업·운영 지원 멀티 에이전트</div><p>매출·마케팅·채용·서류 4개 도메인 에이전트가 채팅 한 줄로 협업</p></div>
+      <div class="al"><span class="k">13기 · 6인</span><h3>FarmOS</h3><div class="t">AI가 바꾸는 한국 농업의 미래</div><p>사진 한 장으로 병해충 진단(정확도 99.48%), IoT 살포까지 원격 제어</p></div>
+      <div class="al"><span class="k">13기 · 6인</span><h3>SPOTTER</h3><div class="t">AI 추천 최적 입지 · 상권 분석</div><p>매출 예측·법률 리스크 검토·가상 시민 시뮬레이션으로 입지 판단</p></div>
+      <div class="al"><span class="k">13기 · 5인</span><h3>Land UP</h3><div class="t">팝업스토어 3D 공간 배치 설계 AI</div><p>빠른 공간 배치 제안으로 팝업스토어 준비 기간을 단축합니다</p></div>
+    </div>
+    <p class="src">출처: 하이미디어아카데미 IT · 프로그래밍 포트폴리오, 심화 생성형 AI활용 인재양성과정 12·13기</p>
+  </div>
+</section>
+<section class="slide " id="demoday" data-title="프로젝트 발표 현장" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="10 / 13: 프로젝트 발표 현장" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Demo Day</div>
+      <h2 class="h2">기업 앞에서 시연하고, <em>질문에 답합니다</em></h2>
+      <p class="lead">협약기업 인사담당자·임원진을 모시고 프로젝트 발표회를 열어 현장에서 일자리 매칭을 진행합니다.</p>
+    </div>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-01.jpg" alt="프로젝트 발표회: 발표회장 전경" loading="lazy" width="700" height="525"><figcaption><b>발표회장 전경</b>심사위원·기업 관계자 착석</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-02.jpg" alt="프로젝트 발표회: 팀 발표" loading="lazy" width="700" height="525"><figcaption><b>팀 발표</b>프로젝트 개요 및 목표 발표</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-03.jpg" alt="프로젝트 발표회: 분석 대시보드 시연" loading="lazy" width="700" height="525"><figcaption><b>분석 대시보드 시연</b>실제 구현 화면 시연</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-04.jpg" alt="프로젝트 발표회: 핵심 기능 · 트러블슈팅" loading="lazy" width="700" height="525"><figcaption><b>핵심 기능 · 트러블슈팅</b>개발 과정과 해결 사례 공유</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-05.jpg" alt="프로젝트 발표회: 발표 진행 및 참관" loading="lazy" width="700" height="525"><figcaption><b>발표 진행 및 참관</b>심사위원 대상 발표</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-06.jpg" alt="프로젝트 발표회: 팀 단위 질의응답" loading="lazy" width="700" height="525"><figcaption><b>팀 단위 질의응답</b>팀원 전원 참여</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-07.jpg" alt="프로젝트 발표회: 발표장 전경" loading="lazy" width="700" height="525"><figcaption><b>발표장 전경</b>참석 기업 관계자 시연 참관</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-08.jpg" alt="프로젝트 발표회: 최종 질의응답" loading="lazy" width="700" height="525"><figcaption><b>최종 질의응답</b>심층 질의 및 평가</figcaption></figure>
+    </div>
+    <p class="src">출처: 하이미디어아카데미 강남캠퍼스 갤러리 · 11기 프로젝트 발표회</p>
+  </div>
+</section>
+<section class="slide " id="results" data-title="현장 면접과 취업 지원" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="11 / 13: 현장 면접과 취업 지원" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Results &amp; Career</div>
+      <h2 class="h2">발표가 끝나면, <em>바로 옆방이 면접장</em>입니다</h2>
+      <p class="lead">최종발표에 협약기업 인사담당자·임원진을 모시고, 발표한 프로젝트로 그날 바로 1:1 현장 면접을 봅니다. 서류 전형을 기다릴 필요가 없습니다.</p>
+    </div>
+    <div class="flow" aria-label="발표에서 채용까지">
+      <span>최종발표<small>기업 앞 시연</small></span><i>→</i>
+      <span class="hl">당일 현장 면접<small>8~12개 기업</small></span><i>→</i>
+      <span>채용<small>수료 직후 취업</small></span>
+    </div>
+    <div class="iv">
+      <figure class="main"><span class="badge">REAL</span><img loading="lazy" decoding="async" src="assets/fde-image-09.jpg" alt="발표회 당일 기업 담당자와 1:1 현장 면접" loading="lazy" width="1000" height="750"><figcaption><b>발표회 당일, 참여 기업과의 1:1 현장 면접</b>발표한 프로젝트로 그날 바로 면접을 봅니다</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-10.jpg" alt="프로젝트 팀 단위 면접" loading="lazy" width="1000" height="750"><figcaption><b>프로젝트 팀 단위 면접</b></figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-11.jpg" alt="프로젝트로 이어지는 면접 질문" loading="lazy" width="1000" height="750"><figcaption><b>프로젝트로 이어지는 질문</b></figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-12.jpg" alt="기업 담당자와의 대화" loading="lazy" width="1000" height="750"><figcaption><b>기업 담당자와의 대화</b></figcaption></figure>
+      <figure><img loading="lazy" decoding="async" src="assets/fde-image-13.jpg" alt="결과물을 보며 진행하는 면접" loading="lazy" width="1000" height="750"><figcaption><b>결과물을 보며 진행하는 면접</b></figcaption></figure>
+    </div>
+    <div class="big">
+      <div class="bg"><b>100%</b><span>심화과정 3기·5기 취업률</span></div>
+      <div class="bg"><b>19기</b><span>심화과정 누적 운영 기수</span></div>
+      <div class="bg"><b>300개+</b><span>채용 협약기업</span></div>
+      <div class="bg"><b>8~12개사</b><span>기수별 발표회 참석 기업</span></div>
+    </div>
+    <div class="cases">
+      <div class="case"><span class="t">kt ds 취업</span><b class="num">연봉 약 6,000만원</b><p>심화과정 수료 후 kt ds에 연봉 약 6,000만원으로 취업했습니다.</p></div>
+      <div class="case"><span class="t">타 기관 수료 후 1년 미취업</span><b>수료 3일 만에 취업</b><p>멘토와 실무 프로젝트를 완성하고 수료 3일 만에 취업했습니다.</p></div>
+      <div class="case"><span class="t">비전공 · 신입</span><b class="num">연봉 4,600만원</b><p>전공자가 아니어도 신입 연봉 4,600만원으로 취업했습니다.</p></div>
+      <div class="case"><span class="t">교보 AI기술센터</span><b class="num">연봉 4,500만원</b><p>AI 전문 조직에 연봉 4,500만원으로 취업했습니다.</p></div>
+    </div>
+    <p class="src">개별 수료생 취업 사례이며 결과는 개인에 따라 다를 수 있습니다. 수료생 취업 기업: 데이타솔루션 · 모티프테크놀로지스 · 새롬정보시스템 · 한국딥러닝 · 퀀텀에이아이 · 세이코어 등</p>
+    <div class="support">
+      <div class="sp"><b>진로 상담</b><span>1:1 방향 설정</span></div>
+      <div class="sp"><b>서류 클리닉</b><span>이력서·자소서 코칭</span></div>
+      <div class="sp"><b>모의 면접</b><span>실전 면접 트레이닝</span></div>
+      <div class="sp"><b>현직자 멘토링</b><span>실무진 특강 연계</span></div>
+      <div class="sp"><b>기업 매칭</b><span>우수업체 선별 추천</span></div>
+      <div class="sp"><b>동창 네트워크</b><span>300명 · 재취업까지</span></div>
+    </div>
+    <div class="quotes">
+      <blockquote class="qt"><p>“멘토님 피드백에서 현직자의 관점을 들을 수 있어 좋았습니다.”</p><cite>심화과정 수료생 후기</cite></blockquote>
+      <blockquote class="qt"><p>“단순한 기술 습득을 넘어, 실무에서 요구되는 문제 해결 능력을 쌓을 수 있었습니다.”</p><cite>심화과정 수료생 후기</cite></blockquote>
+      <blockquote class="qt"><p>“2달간 내가 노력한 만큼 폭풍 성장할 수 있는 기회라고 생각한다.”</p><cite>심화과정 수료생 후기</cite></blockquote>
+    </div>
+  </div>
+</section>
+<section class="slide " id="apply" data-title="모집 안내와 FAQ" data-theme="light" role="group" aria-roledescription="슬라이드" aria-label="12 / 13: 모집 안내와 FAQ" inert>
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Admission</div>
+      <h2 class="h2">모집 안내</h2>
+    </div>
+    <div class="apply">
+      <dl class="info">
+        <div class="hd"><dt>항목</dt><dd>정규 6개월</dd><dd>AI 기술 심화 2개월</dd></div>
+        <div><dt>기간</dt><dd>6개월 · 개강일은 기수별 안내</dd><dd>8주 (강의 4주 + 프로젝트 4주) · 개강일은 기수별 안내</dd></div>
+        <div><dt>훈련시간</dt><dd class="num">960시간</dd><dd class="num">349시간 · 44일</dd></div>
+        <div><dt>수업 시간</dt><dd>09:30–18:30</dd><dd>09:00–18:00 (점심 12–13시)</dd></div>
+        <div><dt>모집 대상</dt><dd>취업 준비생 · 이직 희망자</dd><dd>IT 교육 이수자 중 AI 기초 지식 보유자</dd></div>
+        <div><dt>정원·선발</dt><dd>상담 시 안내</dd><dd>30명 · 1:1 면접 선발</dd></div>
+        <div><dt>비용</dt><dd>최대 전액 무료 · 훈련장려금 수당 최대 월 90만원 지급</dd><dd>훈련비·교재비 전액 국비 지원 · 훈련장려금 지급</dd></div>
+        <div><dt>제공</dt><dd>PC 지원</dd><dd>노트북 대여 · Claude Max 지원</dd></div>
+        <div><dt>장소</dt><dd>하이미디어 강남 · 종로 · 신촌 교육장</dd><dd>하이미디어 강남 교육장</dd></div>
+      </dl>
+      <div class="faq">
+        <details open><summary>비전공자도 들을 수 있나요?</summary><p>정규 과정은 CS 기초와 자바 기본 문법부터 시작합니다. 비전공 신입으로 연봉 4,600만원에 취업한 수료생 사례도 있습니다.</p></details>
+        <details><summary>정규 과정만, 또는 심화 과정만 들을 수 있나요?</summary><p>심화 과정은 IT 교육 이수자 중 AI 기초 지식이 있는 분이 대상이라 단독 지원도 가능합니다. 정규 과정을 마치면 이 조건을 그대로 갖추게 되어 8개월 트랙으로 이어집니다. 개별 신청 조건은 상담에서 안내합니다.</p></details>
+        <details><summary>FDE는 일반 백엔드·AI 개발자와 무엇이 다른가요?</summary><p>FDE는 고객 현장의 문제를 정의하는 데서 출발해 기술 선택, 구현, 평가, 배포·운영까지 책임집니다. 그래서 이 과정은 코딩뿐 아니라 평가셋, 비용 비교, 운영 문서까지 포트폴리오로 남깁니다.</p></details>
+        <details><summary>멘토링은 온라인인가요?</summary><p>목요일 공통 피드백과 조별 멘토링은 19–21시 온라인으로 진행합니다. 특강과 평일 실습은 강남 교육장에서 합니다.</p></details>
+        <details><summary>수료 후 취업은 어떻게 연결되나요?</summary><p>최종발표 당일 8~12개 참여 기업과 현장 면접을 봅니다. 이후에도 서류 클리닉, 모의 면접, 기업 매칭, 동창 네트워크로 재취업까지 지원합니다.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide cta dark" id="consult" data-title="FDE 상담 안내" data-theme="dark" role="group" aria-roledescription="슬라이드" aria-label="13 / 13: FDE 상담 안내" inert>
+  <div class="ring-clip"><div class="rings" aria-hidden="true"><i></i><i></i><i></i></div></div>
+  <div class="wrap" style="position:relative">
+    <div class="eyebrow" style="color:var(--rose-glow)">FDE 엔지니어 양성 과정</div>
+    <h2 style="margin-top:14px">의지만<br><span>가져오세요.</span></h2>
+    <p class="lead">커리큘럼, 멘토, 기업과의 만남, 선배 네트워크. 현장에 배포하는 엔지니어가 되는 8개월의 길이 이미 준비되어 있습니다.</p>
+    <div class="perks"><span>8개월 · 1,309시간</span><span>국비 지원</span><span>노트북 대여</span><span>빅테크 멘토</span><span>발표회 현장 면접</span></div>
+    <div class="contact">
+      <a class="btn primary" href="tel:02-2068-0284">상담 문의 <span class="num">02-2068-0284</span></a>
+    </div>
+    <p class="foot">하이미디어아카데미 · 1993년 설립 · 전국 14개 캠퍼스 · 고용노동부 우수훈련기관 5년 인증</p>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="progress" aria-hidden="true"><span id="progress-bar"></span></div><div class="footer-inner"><div class="page-meta"><div class="page-count"><b id="current-page">01</b> <span>/ 13</span></div><span class="page-title" id="page-title">FDE 엔지니어 과정</span></div><div class="footer-center"><div class="pagination" role="group" aria-label="FDE 슬라이드 선택"><button class="dot active" type="button" data-go="0" aria-label="1번: FDE 엔지니어 과정" aria-current="step"></button><button class="dot" type="button" data-go="1" aria-label="2번: FDE의 다섯 단계"></button><button class="dot" type="button" data-go="2" aria-label="3번: 6개월 + 2개월 구성"></button><button class="dot" type="button" data-go="3" aria-label="4번: 8개월 로드맵"></button><button class="dot" type="button" data-go="4" aria-label="5번: 정규 과정 · 960h"></button><button class="dot" type="button" data-go="5" aria-label="6번: 심화 과정 · 349h"></button><button class="dot" type="button" data-go="6" aria-label="7번: 팀 프로젝트와 멘토링"></button><button class="dot" type="button" data-go="7" aria-label="8번: FDE 포트폴리오"></button><button class="dot" type="button" data-go="8" aria-label="9번: 수료생 프로젝트"></button><button class="dot" type="button" data-go="9" aria-label="10번: 프로젝트 발표 현장"></button><button class="dot" type="button" data-go="10" aria-label="11번: 현장 면접과 취업 지원"></button><button class="dot" type="button" data-go="11" aria-label="12번: 모집 안내와 FAQ"></button><button class="dot" type="button" data-go="12" aria-label="13번: FDE 상담 안내"></button></div><p class="footer-hint"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M2 12h20"/></svg>긴 내용은 위아래로 읽고, 옆으로 넘겨 다음 구간을 보세요</p></div><div class="controls"><button class="control prev" type="button" aria-label="이전 슬라이드" disabled><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6"/></svg></button><button class="control next" type="button" aria-label="다음 슬라이드"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></div></div></footer>
+</div>
+<div id="slide-status" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
